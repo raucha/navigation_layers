@@ -9,6 +9,10 @@ find_package(catkin REQUIRED COMPONENTS
   dynamic_reconfigure
 )
 
+# SET(CMAKE_CXX_FLAGS "-std=c++03 -O0 -g -fsanitize=address ${CMAKE_CXX_FLAGS}")
+# SET(CMAKE_CXX_FLAGS "-std=c++03 -O0 -g ${CMAKE_CXX_FLAGS}")
+# SET(CMAKE_CXX_FLAGS "-std=c++03 -O0 -g ${CMAKE_CXX_FLAGS}")
+
 ## dynamic reconfigure config
 generate_dynamic_reconfigure_options(
   cfg/ProxemicLayer.cfg
@@ -24,9 +28,9 @@ include_directories(
 )
 
 ## add cpp library
-add_library(social_layers 
+add_library(social_layers
             src/social_layer.cpp
-            src/proxemic_layer.cpp 
+            src/proxemic_layer.cpp
             src/passing_layer.cpp
 )
 
