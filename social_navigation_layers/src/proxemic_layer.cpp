@@ -120,6 +120,14 @@ namespace social_navigation_layers
                    by = oy + res / 2;
             for(int i=start_x;i<end_x;i++){
                 for(int j=start_y;j<end_y;j++){
+                  unsigned int span = layered_costmap_->getCostmap()->getSizeInCellsX();
+                  int idx = (i+dx) + (j+dy)*span;
+                  int max_idx = span * layered_costmap_->getCostmap()->getSizeInCellsY() - 1;
+                  if(idx<0 || max_idx<idx){
+                      // Index out of range error
+                      std::cout << "Index out of range. \n";
+                      continue;
+                  }
                   unsigned char old_cost = costmap->getCost(i+dx, j+dy);
                   if(old_cost == costmap_2d::NO_INFORMATION)
                     continue;
