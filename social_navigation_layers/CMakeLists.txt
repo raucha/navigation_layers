@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 # SET(CMAKE_CXX_FLAGS "-std=c++03 -O0 -g -fsanitize=address ${CMAKE_CXX_FLAGS}")
 # SET(CMAKE_CXX_FLAGS "-std=c++03 -O0 -g ${CMAKE_CXX_FLAGS}")
+SET(CMAKE_CXX_FLAGS "-std=c++03 -O2 ${CMAKE_CXX_FLAGS}")
 # SET(CMAKE_CXX_FLAGS "-std=c++03 -O0 -g ${CMAKE_CXX_FLAGS}")
 
 ## dynamic reconfigure config
